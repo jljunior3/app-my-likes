@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #86fde8, #acb6e5);
+    font-family: 'Open Sans', sans-serif;
+}
+
+div.app {
+    position: relative;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 1fr 50px;
+    grid-template-areas: 'header' 'main' 'footer';
+}
+
+header,
+main,
+footer,
+.secao {
+    position: relative;
+    padding: 10px;
+    text-align: center;
+}
+
+header {
+    grid-area: header;
+    color: #fff;
+    align-self: baseline;
+    text-align: center;
+    border-bottom: white solid 1px;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+    font-size: 1em;
+    color: grey;
+    text-align: center;
+    border-top: white solid 1px;
+}

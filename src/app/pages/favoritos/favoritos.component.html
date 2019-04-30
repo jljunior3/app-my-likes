@@ -1,0 +1,31 @@
+<div class="container">
+    <span *ngIf="favoritos?.length > 0">Ordernar Por:</span>
+    <select
+        #order
+        (change)="orderBy(order.value)"
+        *ngIf="favoritos?.length > 0"
+    >
+        <option value="nome">Nome</option>
+        <option value="categoria">Categoria</option>
+    </select>
+    <ol>
+        <li class="lista" *ngFor="let item of favoritos">
+            <span
+                class="categoria"
+                [class.starwars]="item.categoria === 'Star Wars'"
+                [class.cerveja]="item.categoria == 'Cervejas'"
+                [class.marvel]="item.categoria == 'Marvel'"
+            >
+                {{ item.categoria }}
+            </span>
+            <span class="nome">{{ item.nome }}</span>
+            <button
+                (click)="deleteFavorito(item)"
+                title="Remover dos Favoritos"
+            >
+                &#10008;
+            </button>
+        </li>
+    </ol>
+    <p *ngIf="favoritos?.length === 0">Nenhum favorito ainda</p>
+</div>

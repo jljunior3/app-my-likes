@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="header">
+        <search [options]="optionsSelect" (params)="search($event)"></search>
+        <loader *ngIf="loading"></loader>
+    </div>
+    <div class="main">
+        <card
+            *ngFor="let item of people"
+            [item]="item"
+            [title]="item.name"
+            [show]="true"
+            (favoriteItem)="addFavorite($event)"
+        >
+            <img [src]="item.thumbnail.path + '.' + item.thumbnail.extension" />
+            <p>
+                <strong>Description:</strong>
+                {{ item.description }}
+            </p>
+        </card>
+    </div>
+</div>

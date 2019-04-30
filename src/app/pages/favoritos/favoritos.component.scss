@@ -1,0 +1,83 @@
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+
+    select {
+        padding: 5px;
+        margin: 5px;
+        font-size: 1.2em;
+        color: gray;
+    }
+
+    ol {
+        counter-reset: li;
+        list-style: none;
+        font-size: 15px;
+        padding: 0;
+        margin-bottom: 4em;
+    }
+
+    li {
+        position: relative;
+        display: block;
+        padding: 0.4em 0.4em 0.4em 2em;
+        margin: 20px 0;
+        background: #fff;
+        color: gray;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        text-align: left;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        .categoria {
+            color: #fff;
+            padding: 12px 10px 12px 10px;
+        }
+
+        .cerveja {
+            background: #d4b616;
+        }
+
+        .starwars {
+            background: rgb(31, 30, 30);
+        }
+
+        .marvel {
+            background: red;
+        }
+
+        .nome {
+            padding-left: 10px;
+        }
+
+        &:before {
+            content: counter(li);
+            counter-increment: li;
+            position: absolute;
+            left: -1.3em;
+            top: 50%;
+            margin-top: -1.3em;
+            background: #fc756f;
+            height: 2em;
+            width: 2em;
+            line-height: 2em;
+            border: 0.3em solid #fff;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        button {
+            float: right;
+            background: #fff;
+            border: #fff;
+            color: red;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+        }
+    }
+}

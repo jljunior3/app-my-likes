@@ -1,0 +1,16 @@
+{
+  "favoritos": [
+    {
+      "id": 5,
+      "nome": "Darth Vader",
+      "categoria": "Star Wars",
+      "detalhes": "https://swapi.co/api/people/4/"
+    },
+    {
+      "id": 6,
+      "nome": "Berliner Weisse With Yuzu - B-Sides",
+      "categoria": "Cervejas",
+      "detalhes": null
+    }
+  ]
+}

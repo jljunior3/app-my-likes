@@ -1,0 +1,6 @@
+<span class="title">APP MY LIKES</span>
+<a [routerLink]="['/favoritos']" *ngIf="menu !== 'favoritos'">
+    <span class="heart" title="Favoritos">&#10084;</span>
+</a>
+<br />
+<a *ngIf="menu !== 'home'" href="" title="Escolha uma nova categoria">Menu</a>

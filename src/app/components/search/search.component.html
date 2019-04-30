@@ -1,0 +1,17 @@
+<div class="form">
+    <select #opcoes>
+        <option *ngFor="let item of options" [value]="item.value">
+            {{ item.name }}</option
+        >
+    </select>
+    <input
+        #pesquisa
+        type="text"
+        name="search"
+        id="search"
+        (keyup.enter)="search(pesquisa.value, opcoes.value)"
+    />
+    <button (click)="search(pesquisa.value, opcoes.value)">
+        Pesquisar
+    </button>
+</div>

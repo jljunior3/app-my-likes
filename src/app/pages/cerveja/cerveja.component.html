@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="header">
+        <search [options]="optionsSelect" (params)="search($event)"></search>
+        <loader *ngIf="loading"></loader>
+    </div>
+    <div class="main">
+        <card
+            *ngFor="let item of beers"
+            [item]="item"
+            [title]="item.name"
+            [show]="true"
+            (favoriteItem)="addFavorite($event)"
+        >
+            <img [src]="item.image_url" />
+            <p><strong>Description:</strong> {{ item.description }}</p>
+            <p><strong>Tagline:</strong> {{ item.tagline }}</p>
+            <p><strong>PH:</strong> {{ item.ph }}</p>
+            <p><strong>EBC:</strong> {{ item.ebc }}</p>
+            <p><strong>IBU:</strong> {{ item.ibu }}</p>
+            <p><strong>ABV:</strong> {{ item.abv }}</p>
+        </card>
+    </div>
+</div>

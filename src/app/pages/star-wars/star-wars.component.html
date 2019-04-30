@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="header">
+        <search [options]="optionsSelect" (params)="search($event)"></search>
+        <loader *ngIf="loading"></loader>
+    </div>
+    <div class="main">
+        <card
+            *ngFor="let item of people"
+            [item]="item"
+            [title]="item.name"
+            [show]="selected === 'people'"
+            (favoriteItem)="addFavorite($event)"
+        >
+            <p><strong>Gender:</strong> {{ item.gender }}</p>
+            <p><strong>Height:</strong> {{ item.height }}</p>
+            <p><strong>Eye Color:</strong> {{ item.eye_color }}</p>
+            <p><strong>Number Films:</strong> {{ item.films.length }}</p>
+            <p>
+                <strong>Number Starships:</strong> {{ item.starships.length }}
+            </p>
+        </card>
+
+        <card
+            *ngFor="let item of films"
+            [item]="item"
+            [title]="item.title"
+            [show]="selected === 'films'"
+            (favoriteItem)="addFavorite($event)"
+        >
+            <p><strong>Director:</strong> {{ item.director }}</p>
+            <p><strong>Producer:</strong> {{ item.producer }}</p>
+            <p><strong>Episode:</strong> {{ item.episode_id }}</p>
+            <p><strong>Number Species:</strong> {{ item.species.length }}</p>
+            <p>
+                <strong>Number Starships:</strong> {{ item.starships.length }}
+            </p>
+            <p><strong>Number Planets:</strong> {{ item.planets.length }}</p>
+        </card>
+
+        <card
+            *ngFor="let item of starships"
+            [item]="item"
+            [title]="item.name"
+            [show]="selected === 'starships'"
+            (favoriteItem)="addFavorite($event)"
+        >
+            <p><strong>Length:</strong> {{ item.length }}</p>
+            <p><strong>Manufacturer:</strong> {{ item.manufacturer }}</p>
+            <p><strong>Model:</strong> {{ item.model }}</p>
+            <p><strong>passengers:</strong> {{ item.passengers }}</p>
+            <p><strong>Consumables:</strong> {{ item.consumables }}</p>
+            <p><strong>Starship Class:</strong> {{ item.starship_class }}</p>
+        </card>
+    </div>
+</div>
